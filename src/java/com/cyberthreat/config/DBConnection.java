@@ -6,21 +6,21 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    // Read database settings from Windows environment variables.
     private static final String URL =
-            System.getenv("CYBER_DB_URL");
+            System.getenv().getOrDefault(
+                    "CYBER_DB_URL",
+                    "jdbc:mysql://localhost:3306/cyber_threat_db"
+            );
 
-    private static final String USER =
-            System.getenv("CYBER_DB_USER");
-
-    private static final String PASSWORD =
-            System.getenv("CYBER_DB_PASSWORD");
+    private static final String USER = System.getenv("CYBER_DB_USER");
+    private static final String PASSWORD = System.getenv("CYBER_DB_PASSWORD");
 
     public static Connection getConnection() throws SQLException {
 
-        if (URL == null || USER == null || PASSWORD == null) {
+        if (USER == null || PASSWORD == null) {
             throw new SQLException(
-                "Database environment variables are not configured."
+                    "Database credentials are not configured. "
+                    + "Please set CYBER_DB_USER and CYBER_DB_PASSWORD."
             );
         }
 
@@ -32,3 +32,4 @@ public class DBConnection {
 
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+}
