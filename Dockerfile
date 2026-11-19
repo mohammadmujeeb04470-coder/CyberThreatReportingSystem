@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 # Build using Tomcat's server libraries
-RUN ant -Dj2ee.server.home=/usr/local/tomcat -f build.xml clean dist
+RUN ant -Dlibs.CopyLibs.classpath=/app/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar -Dj2ee.server.home=/usr/local/tomcat -f build.xml clean dist
 
 # Runtime stage
 FROM tomcat:9.0-jdk8-temurin
