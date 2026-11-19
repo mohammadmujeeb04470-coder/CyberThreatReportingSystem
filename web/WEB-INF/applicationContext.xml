@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Existing JDBC DAO -->
+    <bean id="threatReportDAO"
+          class="com.cyberthreat.dao.ThreatReportDAO"/>
+
+    <!-- Existing JDBC Service -->
+    <bean id="threatReportService"
+          class="com.cyberthreat.service.ThreatReportService">
+
+        <constructor-arg ref="threatReportDAO"/>
+
+    </bean>
+
+
+    <!-- Hibernate DAO -->
+    <bean id="hibernateThreatReportDAO"
+          class="com.cyberthreat.dao.HibernateThreatReportDAO"/>
+
+    <!-- Hibernate Service with Constructor Injection -->
+    <bean id="hibernateThreatReportService"
+          class="com.cyberthreat.service.HibernateThreatReportService">
+
+        <constructor-arg ref="hibernateThreatReportDAO"/>
+
+    </bean>
+
+</beans>
