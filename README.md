@@ -7,14 +7,14 @@ The Cyber Threat Reporting and Tracking System is a web-based application develo
 - Frontend: HTML, CSS, JavaScript, JSP
 - Backend: Java, Servlets
 - Frameworks: Spring Framework, Hibernate
-- Database: MySQL
+- Database: MySQL / TiDB Cloud
 - Server: Apache Tomcat 9
 - IDE: NetBeans
 - Build Tool: Apache Ant
 
 ## Main Features
 - User Registration and Login
-- Secure Session Management
+- Session Management
 - Cyber Threat Reporting
 - View Submitted Reports
 - Track Report Status
@@ -28,7 +28,7 @@ The Cyber Threat Reporting and Tracking System is a web-based application develo
 - JDK 8
 - Apache NetBeans
 - Apache Tomcat 9
-- MySQL Server 8
+- MySQL Server 8 (for local setup)
 - MySQL Workbench
 
 ## Installation and Execution
@@ -52,6 +52,8 @@ The Cyber Threat Reporting and Tracking System is a web-based application develo
 3. Open `Database/cyber_threat_db.sql`.
 4. Execute the SQL script.
 5. Verify that the `cyber_threat_db` database and its tables are created.
+
+For the deployed application, TiDB Cloud is used as the MySQL-compatible database.
 
 ## Project Structure
 
@@ -81,12 +83,25 @@ CyberThreatReportingSystem/
 
 https://github.com/mohammadmujeeb04470-coder/CyberThreatReportingSystem
 
-## Deployment
+## Live Deployment
 
-Deployment URL: To be added after successful hosting and deployment.
+**Application URL:**
+https://cyberthreatreportingsystem.onrender.com
+
+**Hosting Platform:** Render
+
+**Cloud Database:** TiDB Cloud
+
+The application has been successfully deployed and tested online.
+
+Note: The free hosting instance may take some time to respond after a period of inactivity.
 
 ## Academic Project
 
-B.Tech – Computer Science and Engineering (Cyber Security)
+**Degree:** B.Tech
 
-Developed as part of the Advanced Java Technology project.
+**Branch:** Computer Science and Engineering – Cyber Security
+
+**Subject:** Advanced Java Technology (AJT)
+
+**University:** Marwadi University
